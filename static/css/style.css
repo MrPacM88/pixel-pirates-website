@@ -1,10 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Pixelify+Sans:wght@400..700&display=swap');/* Загальні стилі для всього сайту */
+
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #0A001F; /* Темно-синій фон з нашого лого */
-    color: #FF00A0; /* Неоновий рожевий колір для тексту */
-    font-family: sans-serif;
+    background-color: #0A001F;
+    margin: 0;
+    font-family: 'Fira Code', monospace; /* Базовий шрифт для всього сайту */
+}
+
+.hero {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.logo {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 4rem;
+    color: #FF00A0; /* Неоновий рожевий */
+    text-shadow: 0 0 5px #FF00A0, 0 0 10px #FF00A0, 0 0 20px #ff00a0, 0 0 40px #ff00a0;
+    margin: 0;
+}
+
+.tagline {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #00D1FF; /* Електричний синій */
+    text-shadow: 0 0 5px #00D1FF, 0 0 10px #00D1FF;
+    margin-top: 0.5rem;
+}
+
+.cta-button {
+    margin-top: 2.5rem;
+    padding: 1rem 2rem;
+    border: 2px solid #FF00A0;
+    border-radius: 5px;
+    color: #FF00A0;
+    background-color: transparent;
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #FF00A0;
+    color: #0A001F;
+    box-shadow: 0 0 15px #FF00A0;
+}
+
+/* СТилі для навагації */
+.main-nav {
+    padding: 1rem, 2rem;
+    text-align: center;
+}
+
+.main-nav a {
+    color: #00D1FF; /* Неоновий блакитний колір для посилань */
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    margin: 0 1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #FF00A0; /* Зміна кольору при наведенні */
+    text-shadow: 0 0 10px #FF00A0; /* Неоновий ефект при наведенні */
+}
+/* --- СТИЛІ ДЛЯ СТОРІНКИ "ПРО КОМАНДУ" --- */
+.page-title {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 3rem;
+    color: #FF00A0; /* Неоновий рожевий колір для заголовку */
+    text-shadow: 0 0 5px #FF00A0, 0 0 10px #FF00A0; /* Неоновий ефект для заголовку */
+    text-align: center;
+    margin-bottom: 2rem 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member-card {
+    background-color: #1a0230;
+    border: 2px solid #FF00A0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0px 20px rgba(255, 0, 160, 0.5);
+}
+
+.team-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #00D1FF;
+    margin-bottom: 1rem;
+    background-color: #0A001F;
+}
+
+.team-member-name {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem 0;
+}
+
+.team-member-role {
+    font-size: 1rem;
+    color: #00D1FF;
     margin: 0;
 }

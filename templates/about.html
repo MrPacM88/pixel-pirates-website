@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про команду - Pixel Pirates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/">Головна</a>
+        <a href="/about">Про команду</a>
+    </nav>
+
+    <div class="team-section">
+        <h1 class="page-title">Наш Екіпаж</h1>
+        <div class="team-grid">
+            {% for member in team %}
+            <div class="team-member-card">
+                <img src="{{ url_for('static', filename='images/' + member.avatar) }}" alt="Аватар {{ member.name }}" class="team-member-avatar">
+                <h3 class="team-member-name">{{ member.name }}</h3>
+                <p class="team-member-role">{{ member.role }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

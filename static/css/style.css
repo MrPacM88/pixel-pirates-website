@@ -1,0 +1,10 @@
+body {
+    background-color: #0A001F; /* Темно-синій фон з нашого лого */
+    color: #FF00A0; /* Неоновий рожевий колір для тексту */
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}

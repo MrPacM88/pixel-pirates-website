@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Про команду - Pixel Pirates</title>
+    <title>Портфоліо - Pixel Pirates</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -20,21 +18,16 @@
         <a href="/portfolio">Портфоліо</a>
     </nav>
 
-    <div class="team-section">
-        <h1 class="page-title">Наш Екіпаж</h1>
-        <div class="team-grid">
-            {% for member in team %}
-            <div class="team-member-card">
-                <div class="card-icon">
-                    <i class="fa-solid fa-user-secret"></i> 
-                </div>
-                <h3 class="team-member-name">{{ member.name }}</h3>
-                <p class="team-member-nickname">"{{ member.nickname }}"</p>
-                <p class="team-member-role">{{ member.role }}</p>
-                <a href="{{ member.contact_link }}" class="contact-link" target="_blank">
-                    <i class="fa-brands fa-telegram"></i> Зв'язатися
+    <div class="portfolio-section">
+        <h1 class="page-title">Захоплені Скарби</h1>
+        <div class="portfolio-grid">
+            {% for project in projects %}
+                <a href="{{ url_for('project_detail', project_slug=project.slug) }}" class="portfolio-card" ... >
+                    <div class="card-overlay">
+                        <h3 class="card-title">{{ project.title }}</h3>
+                        <p class="card-category">{{ project.category }}</p>
+                    </div>
                 </a>
-            </div>
             {% endfor %}
         </div>
     </div>

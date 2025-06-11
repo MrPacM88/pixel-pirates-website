@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Послуги - Pixel Pirates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/">Головна</a>
+        <a href="/about">Про команду</a>
+        <a href="/services">Послуги</a>
+        <a href="/portfolio">Портфоліо</a>
+    </nav>
+
+    <div class="services-section">
+        <h1 class="page-title">Наш Арсенал</h1>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="service-title">Frontend Розробка</h3>
+                <p class="service-description">
+                    Створюємо швидкі, адаптивні та візуально привабливі інтерфейси. Перетворюємо дизайн-макети на живий, інтерактивний веб-досвід, що захоплює користувачів.</p>
+                </p>
+            </div>
+        <div class="service-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3 class="service-title">Backend Розробка</h3>
+                <p class="service-description">
+                    Розробляємо надійні серверні рішення, що забезпечують стабільну роботу вашого додатку. Використовуємо сучасні технології для створення масштабованих та безпечних API.</p>
+                </p>
+            </div>
+        <div class="service-card">
+            <div class="card-icon">
+                <i class="fa-solid fa-mobile-alt"></i>
+            </div>
+            <h3 class="service-title">Мобільна Розробка</h3>
+            <p class="service-description">
+                    Створюємо кросплатформенні мобільні додатки, що працюють на iOS та Android. Забезпечуємо високу продуктивність та зручний інтерфейс для користувачів.</p>
+            </p>
+        </div>
+    </div>
+</body>       
+</html>

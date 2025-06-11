@@ -350,3 +350,104 @@ body {
     }
 }
 
+/* --- СТИЛІ ДЛЯ СТОРІНКИ "ПРАЙС" --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.pricing-card {
+    background-color: #1a0230;
+    border: 2px solid #4a2f6a;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Стилі для виділеної картки */
+.pricing-card.featured {
+    border-color: #FF00A0; /* Рожева рамка для акценту */
+    transform: scale(1.05);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FF00A0;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.pricing-title {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    color: #00D1FF;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+}
+
+.features-list li {
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.features-list .fa-check {
+    color: #28a745; /* Зелений */
+    margin-right: 10px;
+}
+
+.features-list .fa-times {
+    color: #dc3545; /* Червоний */
+    margin-right: 10px;
+}
+
+/* --- СТИЛІ ДЛЯ ФОРМ --- */
+.form-section { max-width: 500px; margin: 2rem auto; padding: 2rem; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { color: #ccc; font-family: 'Fira Code', monospace; margin-bottom: 0.5rem; display: block; }
+.form-control { width: 100%; padding: 0.75rem; background-color: #1a0230; border: 1px solid #4a2f6a; border-radius: 5px; color: #fff; font-size: 1rem;}
+.form-error { color: #dc3545; font-size: 0.9rem; }
+
+/* --- СТИЛІ ДЛЯ ФЛЕШ-ПОВІДОМЛЕНЬ --- */
+.flashes {
+    list-style-type: none; /* Прибираємо стандартні крапки списку */
+    padding: 0;
+    margin: 1rem 2rem; /* Відступи зверху/знизу та по боках */
+}
+
+.flashes li {
+    background-color: rgba(0, 209, 255, 0.15); /* Напівпрозорий синій фон */
+    border: 1px solid #00D1FF; /* Синя неонова рамка */
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: #eee; /* Світлий колір тексту */
+    font-family: 'Fira Code', monospace;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 209, 255, 0.3); /* Ефект неонового світіння */
+}

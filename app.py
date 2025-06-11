@@ -1,6 +1,36 @@
+import os
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from flask import flash, redirect, url_for
+from werkzeug.security import generate_password_hash
+from forms import RegistrationForm
+
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = 'BURN_BUTCHER_BURN'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password_hash = db.Column(db.String(256), nullable=False)
+
+    # --- ДОДАЙТЕ ЦЕЙ МЕТОД ---
+    def __init__(self, username, email, password_hash):
+        self.username = username
+        self.email = email
+        self.password_hash = password_hash
+
+    def __repr__(self):
+        return f'<User {self.username}>'
 
 # Тепер це глобальний список, доступний для всіх функцій
 PROJECTS = [
@@ -49,7 +79,6 @@ def services():
 def portfolio():
     return render_template('portfolio.html', projects=PROJECTS)
 
-# НОВИЙ ДИНАМІЧНИЙ МАРШРУТ
 @app.route('/portfolio/<string:project_slug>')
 def project_detail(project_slug):
     # Шукаємо потрібний проєкт у списку PROJECTS за його 'slug'
@@ -61,6 +90,31 @@ def project_detail(project_slug):
     
     # Передаємо дані знайденого проєкту у новий шаблон
     return render_template('project_detail.html', project=found_project)
+
+@app.route('/pricing')
+def pricing():
+    return render_template('pricing.html')
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        # Хешуємо пароль, щоб не зберігати його у відкритому вигляді
+        hashed_password = generate_password_hash(form.password.data)
+        
+        # Створюємо нового користувача
+        user = User(username=form.username.data, email=form.email.data, password_hash=hashed_password)
+        
+        # Додаємо його в базу даних
+        db.session.add(user)
+        db.session.commit()
+        
+        # Показуємо повідомлення про успіх і перенаправляємо на головну
+        flash('Вітаємо, ви успішно зареєструвалися!', 'success')
+        return redirect(url_for('home'))
+        
+    return render_template('register.html', title='Реєстрація', form=form)
 
 
 if __name__ == '__main__':

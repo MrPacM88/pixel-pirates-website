@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прайс - Pixel Pirates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/">Головна</a>
+        <a href="/about">Про команду</a>
+        <a href="/services">Послуги</a>
+        <a href="/portfolio">Портфоліо</a>
+        <a href="/pricing">Прайс</a>
+        <a href="/register">Реєстрація</a>
+    </nav>
+
+    <div class="pricing-section">
+        <h1 class="page-title">Піратські Тарифи</h1>
+        <div class="pricing-grid">
+            
+            <div class="pricing-card">
+                <h3 class="pricing-title">Шлюпка</h3>
+                <p class="pricing-price">від $250</p>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Лендінг або сайт-візитка</li>
+                    <li><i class="fa-solid fa-check"></i> Унікальний дизайн</li>
+                    <li><i class="fa-solid fa-check"></i> Адаптивність під мобільні</li>
+                    <li><i class="fa-solid fa-times"></i> Адмін-панель</li>
+                </ul>
+                <a href="#" class="cta-button">Замовити</a>
+            </div>
+
+            <div class="pricing-card featured">
+                 <div class="featured-badge">Популярний</div>
+                <h3 class="pricing-title">Фрегат</h3>
+                <p class="pricing-price">від $600</p>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Багатосторінковий сайт</li>
+                    <li><i class="fa-solid fa-check"></i> Унікальний дизайн</li>
+                    <li><i class="fa-solid fa-check"></i> Адаптивність під мобільні</li>
+                    <li><i class="fa-solid fa-check"></i> Базова адмін-панель</li>
+                </ul>
+                <a href="#" class="cta-button">Замовити</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="pricing-title">Галеон</h3>
+                <p class="pricing-price">від $1500</p>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> E-commerce або веб-додаток</li>
+                    <li><i class="fa-solid fa-check"></i> Комплексний UI/UX дизайн</li>
+                    <li><i class="fa-solid fa-check"></i> Адаптивність під мобільні</li>
+                    <li><i class="fa-solid fa-check"></i> Розширена адмін-панель</li>
+                </ul>
+                <a href="#" class="cta-button">Замовити</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="pricing-title">Telegram-бот</h3>
+                <p class="pricing-price">від $50</p>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Збір заявок з чату</li>
+                    <li><i class="fa-solid fa-check"></i> Базові команди та відповіді</li>
+                    <li><i class="fa-solid fa-check"></i> Інтеграція з Google Sheets</li>
+                    <li><i class="fa-solid fa-check"></i> Складна логіка та платежі</li>
+                </ul>
+                <a href="#" class="cta-button">Замовити</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="pricing-title">Скрипти / Автоматизація</h3>
+                <p class="pricing-price">від $25</p>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Парсинг даних з сайтів</li>
+                    <li><i class="fa-solid fa-check"></i> Автоматизація рутинних задач</li>
+                    <li><i class="fa-solid fa-check"></i> Обробка файлів (Excel, CSV)</li>
+                    <li><i class="fa-solid fa-check"></i> Написання за вашим ТЗ</li>
+                </ul>
+                <a href="#" class="cta-button">Замовити</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

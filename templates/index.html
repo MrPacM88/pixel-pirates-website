@@ -12,11 +12,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
     <nav class="main-nav">
     <a href="/">Головна</a>
     <a href="/about">Про команду</a>
     <a href="/services">Послуги</a>
     <a href="/portfolio">Портфоліо</a>
+    <a href="/pricing">Прайс</a>
+    <a href="/register">Реєстрація</a>
 </nav>
     <main class="hero">
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Pixel Pirates Logo" class="logo">
